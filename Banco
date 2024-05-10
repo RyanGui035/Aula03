@@ -49,7 +49,7 @@ public BancoJDBC(){
  }
 
  public static void main(String[] args){
-     
+     BancoJDBC bancoJDBC = new BancoJDBC();
  }
 
     }
