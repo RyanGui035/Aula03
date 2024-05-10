@@ -1,19 +1,26 @@
-CREATE SCHEMA IF NOT EXISTS Banco DEFAULT
-CHARACTER SET utf8;
-USE Banco;
 
-CREATE TABLE Empregado(
-matricula SMALLINT NOT NULL,
-nome VARCHAR(50) NOT NULL,
-telefone VARCHAR(11),
-salario NUMERIC(15,2) NOT NULL,
-PRIMARY KEY (matricula)
-);
+package bancojdbc;
 
-INSERT INTO Empregado VALUES
-(1,'Joao','61981192323','15000.00');
-INSERT INTO Empregado VALUES
-(2,'Jose','61984192626','35000.00');
-INSERT INTO Empregado VALUES
-(3,'Paulo','61985192886','40000.00');
-SELECT * FROM Empregado;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class BancoJDBC {
+   private Connection con;
+   private Statement stmt;
+    
+public BancoJDBC(){
+  try{
+    Class.forName("com.mysql.jdbc.Driver");
+     System.out.println("Driver encontrado!");
+      }catch(ClassNotFoundException e){
+     System.out.println("Driver não encontrado!" + e);
+     System.out.println("Error: "+ e.getMessage());
+     }
+  
+   } 
+ public static void main(String[] args){
+     
+ }
+}
