@@ -24,3 +24,21 @@ public BancoJDBC(){
      
  }
 }
+
+String url = "jdbc:mysql://localhost:3306/Banco";
+ String user = "root";
+ String password = "";
+try{
+
+con=DriverManager.getConnection(url,user,password);
+stmt = con.createStatement();
+
+}catch(SQLException e){
+ System.out.println("Error: "+ e.getMessage());
+}
+//inserirRegistros();
+listarRegistros();
+}
+
+
+
