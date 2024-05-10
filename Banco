@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.ResultSet;
 
-
 public class BancoJDBC {
    private Connection con;
    private Statement stmt;
@@ -29,6 +28,7 @@ public BancoJDBC(){
      System.out.println("Error: "+ e.getMessage());
 }
 //inserirRegistros();
+    inserirRegistros();
     listarRegistros();
    } 
  private void listarRegistros(){
@@ -42,15 +42,21 @@ public BancoJDBC(){
              float salario = rs.getFloat("salario");
            System.out.println(matricula + "\t" + nome + "\t" +
                telefone + "\t" + salario);
-}
+    }
  }catch(SQLException e){
  System.out.println("Erro: "+ e.getMessage());
+    }
  }
+ 
+ private void inserirRegistros(){
+   try{
+ stmt.executeUpdate("INSERT INTO Empregado VALUES (4,'Evandro','6291376654','6780.00')");
+    }catch(SQLException e){
+      System.out.println("Error: "+ e.getMessage());
+    }
  }
-
  public static void main(String[] args){
      BancoJDBC bancoJDBC = new BancoJDBC();
- }
-
-    }
+     }
+  }
   
